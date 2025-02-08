@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      input {
+        width: 300px;
+        font-size: 20px;
+      }
+      button {
+        width: 230px;
+        font-size: 20px;
+      }
+      .button_div {
+        margin-top: 10px;
+      }
+      #container {
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      function calculation(operator) {
+        let n1 = parseInt(document.getElementById("num1").value);
+        let n2 = parseInt(document.getElementById("num2").value);
+        const result = document.getElementById("result");
+
+        if (operator == "+") {
+          result.value = n1 + n2;
+        } else if (operator == "-") {
+          result.value = n1 - n2;
+        } else if (operator == "*") {
+          result.value = n1 * n2;
+        } else if (operator == "/") {
+          result.value = n1 / n2;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="input_div">
+        <input placeholder="Enter the value of X" id="num1" />
+        <input placeholder="Enter the value of Y" id="num2" />
+        <input placeholder="Result will appear here" id="result" disabled />
+      </div>
+
+      <div class="button_div">
+        <button onclick="calculation('+')">Addition (X + Y)</button>
+        <button onclick="calculation('-')">Subtraction (X - Y)</button>
+        <button onclick="calculation('*')">Multiplication (X * Y)</button>
+        <button onclick="calculation('/')">Division (X / Y)</button>
+      </div>
+    </div>
+  </body>
+</html>
